@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PhoneBook.Domain.Model;
 using PhoneBook.Domain.Services;
 using PhoneBook.WebAPI.Definitions;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -33,7 +34,7 @@ namespace PhoneBook.WebAPI.Controllers
         }
 
         [HttpGet()]
-		[ProducesResponseType((int)HttpStatusCode.OK)]
+		[ProducesResponseType(typeof(IEnumerable<Person>), (int)HttpStatusCode.OK)]
 		public async Task<IActionResult> FindPerson(string firstName, string lastName)
         {
            var persons = await _phoneBookService.Find(firstName, lastName);
