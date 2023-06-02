@@ -56,9 +56,11 @@ namespace PhoneBook.IntegrationTests
 
 			var person1Result = await GetPersons(person1.FirstName, person1.SecondName);
 			var person2Result = await GetPersons(person2.FirstName, person2.SecondName);
+			var personsResult = await GetPersons(null, null);
 
 			Assert.Empty(person1Result);
 			Assert.Empty(person2Result);
+			Assert.Empty(personsResult);
 		}
 
 		private async Task<Person> AddPerson(string firstName, string secondName, string address, string phoneNumber)
