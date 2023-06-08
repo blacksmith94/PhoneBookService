@@ -36,7 +36,7 @@ namespace PhoneBook.WebAPI.Extensions
 			});
 		}
 
-		public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+		public static void AddInfrastructure(this IServiceCollection services)
 		{
 			services.AddSwaggerGen(c =>
 			{

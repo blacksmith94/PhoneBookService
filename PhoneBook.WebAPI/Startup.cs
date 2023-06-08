@@ -20,7 +20,7 @@ namespace PhoneBook.WebAPI
 		public void ConfigureServices(IServiceCollection services)
 		{
 			//Infrastructure  
-			services.AddInfrastructure(_configuration);
+			services.AddInfrastructure();
 
 			//Data
 			services.AddData(_configuration);

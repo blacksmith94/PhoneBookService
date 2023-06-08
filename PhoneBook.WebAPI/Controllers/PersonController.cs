@@ -24,7 +24,7 @@ namespace PhoneBook.WebAPI.Controllers
 
         [HttpPost()]
 		[ProducesResponseType(typeof(Person), (int)HttpStatusCode.OK)]
-		public async Task<ActionResult<Person>> AddPerson(PersonDefinition definition)
+		public async Task<IActionResult> AddPerson(PersonDefinition definition)
         {
             var newPerson = _mapper.Map<Person>(definition);
             
